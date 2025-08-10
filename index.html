@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>یوم آزادی مبارک | Pakistan Independence Day</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --green-dark: #00401A;
+            --green-medium: #006633;
+            --green-light: #008844;
+            --gold: #FFD700;
+            --orange: #FF8C00;
+            --white: #ffffff;
+            --glass-bg: rgba(255, 255, 255, 0.12);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --glass-shadow: 0 8px 32px 0 rgba(0, 70, 26, 0.37);
+            --trading-blue: #1E3A8A;
+            --trading-light-blue: #3B82F6;
+        }
+        
+        body {
+            font-family: 'Poppins', 'Noto Nastaliq Urdu', sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+            color: var(--white);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(10, 46, 25, 0.8) 0%, rgba(0, 26, 13, 0.8) 100%);
+        }
+        
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            overflow: hidden;
+            background: linear-gradient(to bottom, rgba(10, 46, 25, 0.9) 0%, rgba(0, 26, 13, 0) 100%);
+            /* Added background image */
+            background-image: url('6.gif');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .background::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(255, 217, 0, 0.055) 0%, transparent 10%),
+                radial-gradient(circle at 80% 70%, rgba(255, 140, 0, 0.048) 0%, transparent 15%),
+                radial-gradient(circle at 40% 60%, rgba(255, 217, 0, 0.027) 0%, transparent 12%);
+            /* Dark overlay for better text readability */
+            background-color: rgba(0, 26, 13, 0.486);
+        }
+        
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 10;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            width: 100%;
+            animation: fadeInDown 1s ease-out;
+        }
+        
+        .header h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            margin-bottom: 15px;
+            color: var(--white);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+                         0 0 20px rgba(255, 215, 0, 0.7),
+                         0 0 30px rgba(255, 140, 0, 0.6);
+            animation: glow 2s infinite alternate;
+            position: relative;
+        }
+        
+        .header h1::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70%;
+            max-width: 250px;
+            height: 4px;
+            background: linear-gradient(to right, transparent, var(--gold), transparent);
+            border-radius: 50%;
+            filter: blur(2px);
+        }
+        
+        .header h2 {
+            font-size: clamp(1.8rem, 5vw, 2.8rem);
+            color: var(--gold);
+            margin-bottom: 25px;
+            font-weight: 600;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        }
+        
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            width: 100%;
+        }
+        
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+            padding: clamp(20px, 3vw, 35px);
+            box-shadow: var(--glass-shadow);
+            width: 100%;
+            max-width: 550px;
+            transition: transform 0.4s, box-shadow 0.4s;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .glass-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 45px 0 rgba(0, 70, 26, 0.6);
+        }
+        
+        .glass-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(0, 64, 26, 0.2), rgba(255, 255, 255, 0.15));
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .card-title {
+            font-size: clamp(1.8rem, 4vw, 2.4rem);
+            margin-bottom: 25px;
+            color: var(--gold);
+            text-align: center;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .card-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(to right, transparent, var(--gold), transparent);
+            border-radius: 50%;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            color: var(--white);
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: clamp(12px, 3vw, 15px) clamp(15px, 3vw, 20px);
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+            background: rgba(0, 64, 26, 0.25);
+            color: var(--white);
+            font-size: clamp(1rem, 3vw, 1.1rem);
+            transition: all 0.3s;
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.6),
+                        inset 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.65);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: clamp(12px, 3vw, 15px) clamp(20px, 4vw, 35px);
+            background: linear-gradient(45deg, var(--gold), var(--orange));
+            color: var(--green-dark);
+            border: none;
+            border-radius: 50px;
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            width: 100%;
+            margin-top: 15px;
+            box-shadow: 0 5px 18px rgba(255, 140, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: 0.5s;
+            z-index: -1;
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(255, 140, 0, 0.7);
+            background: linear-gradient(45deg, var(--orange), var(--gold));
+        }
+        
+        .btn:hover::before {
+            left: 100%;
+        }
+        
+        .btn:active {
+            transform: translateY(2px);
+            box-shadow: 0 3px 12px rgba(255, 140, 0, 0.5);
+        }
+        
+        .message-box {
+            background: rgba(0, 64, 26, 0.35);
+            border-radius: 15px;
+            padding: clamp(15px, 3vw, 25px);
+            margin-top: 25px;
+            text-align: center;
+            border: 1px solid var(--glass-border);
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .message-box p {
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            line-height: 1.7;
+            color: var(--gold);
+            text-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+            font-weight: 600;
+        }
+        
+        .share-section {
+            text-align: center;
+            margin-top: 35px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .share-btn {
+            background: linear-gradient(45deg, var(--green-dark), var(--green-medium));
+            color: var(--gold);
+            padding: clamp(12px, 3vw, 18px) clamp(25px, 5vw, 50px);
+            font-size: clamp(1.1rem, 3vw, 1.5rem);
+            border-radius: 50px;
+            border: 2px solid var(--gold);
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+        }
+        
+        .share-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.7);
+            background: linear-gradient(45deg, var(--green-medium), var(--green-dark));
+        }
+        
+        .trading-btn {
+            background: linear-gradient(45deg, var(--trading-blue), var(--trading-light-blue));
+            color: var(--white);
+            padding: clamp(12px, 3vw, 18px) clamp(25px, 5vw, 50px);
+            font-size: clamp(1.1rem, 3vw, 1.5rem);
+            border-radius: 50px;
+            border: 2px solid var(--gold);
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .trading-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(59, 130, 246, 0.7);
+            background: linear-gradient(45deg, var(--trading-light-blue), var(--trading-blue));
+        }
+        
+        .trading-btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: 0.5s;
+        }
+        
+        .trading-btn:hover::before {
+            left: 100%;
+        }
+        
+        .flag {
+            display: flex;
+            justify-content: center;
+            margin: 25px 0;
+            position: relative;
+            width: clamp(220px, 80vw, 350px);
+            margin-left: auto;
+            margin-right: auto;
+            animation: scaleIn 1s ease-out;
+        }
+        
+        .flag-bar {
+            height: clamp(18px, 5vw, 25px);
+            flex: 1;
+            position: relative;
+        }
+        
+        .green {
+            background-color: var(--green-dark);
+        }
+        
+        .white {
+            background-color: var(--white);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .flag-moon {
+            width: clamp(14px, 4vw, 20px);
+            height: clamp(14px, 4vw, 20px);
+            background: var(--green-dark);
+            border-radius: 50%;
+            position: relative;
+        }
+        
+        .flag-moon::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: -7px;
+            width: clamp(14px, 4vw, 20px);
+            height: clamp(14px, 4vw, 20px);
+            background: var(--white);
+            border-radius: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .firework {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: -1;
+            box-shadow: 0 0 10px currentColor;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: clamp(15px, 3vw, 25px);
+            width: 100%;
+            color: var(--white);
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            background: rgba(0, 0, 0, 0.15);
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+            border: 1px solid var(--glass-border);
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .urdu-text {
+            font-family: 'Noto Nastaliq Urdu', serif;
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            color: var(--gold);
+            line-height: 1.7;
+            text-align: center;
+            margin: 25px 0;
+            text-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+            animation: fadeIn 1.5s ease-out;
+        }
+        
+        .link-box {
+            background: rgba(0, 64, 26, 0.45);
+            border-radius: 15px;
+            padding: clamp(15px, 3vw, 20px);
+            margin-top: 25px;
+            text-align: center;
+            border: 2px dashed var(--gold);
+            word-break: break-all;
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .link-box::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+            pointer-events: none;
+        }
+        
+        .link-box a {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+            word-break: break-all;
+            display: block;
+            padding: 8px;
+            border-radius: 10px;
+            font-size: clamp(0.9rem, 3vw, 1.1rem);
+        }
+        
+        .link-box a:hover {
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+        }
+        
+        /* Image Container */
+        .image-container {
+            margin: 40px 0;
+            text-align: center;
+            width: 100%;
+            position: relative;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .image-box {
+            display: inline-block;
+            background: rgba(0, 64, 26, 0.3);
+            border-radius: 15px;
+            padding: 15px;
+            border: 2px solid var(--gold);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            max-width: 350px;
+        }
+        
+        .image-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.4);
+            background: rgba(0, 64, 26, 0.5);
+        }
+        
+        .image-box a {
+            display: block;
+            text-decoration: none;
+        }
+        
+        .image-box img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 2px solid var(--white);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            max-width: 250px;
+        }
+        
+        .image-box img:hover {
+            transform: scale(1.03);
+        }
+        
+        .image-caption {
+            margin-top: 15px;
+            font-size: clamp(1.1rem, 3vw, 1.4rem);
+            color: var(--gold);
+            font-weight: 600;
+            text-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+        }
+        
+        /* Trading Section */
+        .trading-section {
+            margin-top: 20px;
+            text-align: center;
+            width: 100%;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .trading-info {
+            background: rgba(30, 58, 138, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+            border: 2px solid var(--gold);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .trading-info h3 {
+            color: var(--gold);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .trading-info p {
+            color: var(--white);
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        /* Animations */
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+                             0 0 20px rgba(255, 215, 0, 0.7),
+                             0 0 30px rgba(255, 140, 0, 0.6);
+            }
+            to {
+                text-shadow: 0 0 15px rgba(255, 255, 255, 0.9),
+                             0 0 30px rgba(255, 215, 0, 0.8),
+                             0 0 45px rgba(255, 140, 0, 0.7);
+            }
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes scaleIn {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        
+        .moon-star {
+            position: absolute;
+            top: clamp(20px, 5vw, 30px);
+            right: clamp(20px, 5vw, 30px);
+            width: clamp(60px, 15vw, 100px);
+            height: clamp(60px, 15vw, 100px);
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 30px var(--gold);
+            animation: float 4s ease-in-out infinite;
+            z-index: 5;
+        }
+        
+        .moon-star::before {
+            content: "★";
+            position: absolute;
+            color: var(--green-dark);
+            font-size: clamp(30px, 8vw, 50px);
+            transform: rotate(20deg);
+        }
+        
+        .confetti {
+            position: fixed;
+            width: 15px;
+            height: 15px;
+            background: var(--gold);
+            opacity: 0;
+            z-index: -1;
+        }
+        
+        .social-sharing {
+            display: flex;
+            justify-content: center;
+            gap: clamp(10px, 3vw, 20px);
+            margin-top: 25px;
+        }
+        
+        .social-btn {
+            width: clamp(45px, 12vw, 60px);
+            height: clamp(45px, 12vw, 60px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: clamp(1.4rem, 4vw, 1.8rem);
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s;
+        }
+        
+        .social-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+        }
+        
+        .whatsapp { background: #25D366; }
+        .facebook { background: #3b5998; }
+        .twitter { background: #1DA1F2; }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .content {
+                gap: 25px;
+            }
+            
+            .header {
+                margin-bottom: 30px;
+            }
+            
+            .glass-card {
+                padding: 20px;
+            }
+            
+            .message-box {
+                min-height: 140px;
+            }
+            
+            .share-section {
+                margin-top: 25px;
+            }
+            
+            .image-container {
+                margin: 30px 0;
+            }
+            
+            .image-box {
+                max-width: 300px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                padding: 15px;
+            }
+            
+            .header h1::after {
+                width: 60%;
+            }
+            
+            .content {
+                gap: 20px;
+            }
+            
+            .glass-card {
+                padding: 18px;
+            }
+            
+            .card-title::after {
+                width: 80px;
+            }
+            
+            .form-group {
+                margin-bottom: 20px;
+            }
+            
+            .social-sharing {
+                gap: 12px;
+            }
+            
+            .footer {
+                margin-top: 30px;
+            }
+            
+            .image-box {
+                max-width: 280px;
+            }
+            
+            .image-box img {
+                max-width: 220px;
+            }
+        }
+        
+        @media (max-width: 360px) {
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .header h2 {
+                font-size: 1.6rem;
+            }
+            
+            .card-title {
+                font-size: 1.6rem;
+            }
+            
+            .urdu-text {
+                font-size: 1.4rem;
+            }
+            
+            .btn {
+                font-size: 1rem;
+            }
+            
+            .share-btn, .trading-btn {
+                font-size: 1.1rem;
+                padding: 12px 25px;
+            }
+            
+            .image-caption {
+                font-size: 1.1rem;
+            }
+            
+            .image-box {
+                max-width: 250px;
+            }
+            
+            .image-box img {
+                max-width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    
+    <div class="moon-star"></div>
+    
+    <div class="container">
+        <script type="text/javascript">
+            atOptions = { 'key' : 'c7bc9c61f84c810356a5ff3de1fdf4d2', 'format' : 'iframe', 'height' : 50, 'width' : 320, 'params' : {} };
+        </script>
+        <script type="text/javascript" src="//bulletinsituatedelectronics.com/c7bc9c61f84c810356a5ff3de1fdf4d2/invoke.js"></script>
+
+        <div class="header">
+            <h1>یومِ آزادی مبارک</h1>
+            <h2>Pakistan Independence Day</h2>
+            <div class="flag">
+                <div class="flag-bar green"></div>
+                <div class="flag-bar white">
+                    <div class="flag-moon"></div>
+                </div>
+                <div class="flag-bar green"></div>
+            </div>
+            <p class="urdu-text">آزادی کا سفر انتہائی مشکل تھا، لیکن ہم نے منزل پا ہی لی</p>
+        </div>
+        
+        <div class="content">
+            <div class="glass-card">
+                <h3 class="card-title">Share Independence Day Wishes</h3>
+                <div class="form-group">
+                    <label for="friendName">Enter Friend's Name:</label>
+                    <input type="text" id="friendName" class="form-control" placeholder="Enter your friend's name">
+                </div>
+                <button class="btn" onclick="generateMessage()">
+                    <i class="fas fa-star"></i> Generate Independence Day Message
+                </button>
+                
+                <div class="message-box">
+                    <p id="message">Your personalized message will appear here</p>
+                </div>
+                
+                <div id="linkContainer" style="display: none; margin-top: 30px;">
+                    <h4 style="color: var(--gold); margin-bottom: 15px; text-align: center;">Share this link with your friend:</h4>
+                    <div class="link-box">
+                        <a id="generatedLink" href="#" target="_blank">Click to copy</a>
+                    </div>
+                </div>
+                
+                <div class="social-sharing">
+                    <div class="social-btn whatsapp" onclick="shareOnWhatsApp()">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="social-btn facebook" onclick="shareOnFacebook()">
+                        <i class="fab fa-facebook-f"></i>
+                    </div>
+                    <div class="social-btn twitter" onclick="shareOnTwitter()">
+                        <i class="fab fa-twitter"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="glass-card">
+                <h3 class="card-title">Pakistan Independence Day</h3>
+                <p class="urdu-text">پاکستان زندہ باد</p>
+                <div style="text-align: center; margin: 25px 0;">
+                    <img src="6.gif" alt="Pakistan Flag" style="width: 100%; max-width: 250px; height: auto; border-radius: 15px; border: 3px solid var(--gold); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);">
+                </div>
+                <p style="text-align: center; margin-bottom: 25px; font-size: clamp(1rem, 3vw, 1.2rem); line-height: 1.7; color: var(--white);">
+                    On this special day, let's remember the sacrifices of our heroes and celebrate the freedom we enjoy today. Pakistan is not just a country, it's an emotion!
+                </p>
+                <p class="urdu-text">ہم سب پاکستانی ہیں، یہ ہماری پہچان ہے</p>
+            </div>
+        </div>
+        
+        <!-- Image Container -->
+        <div class="image-container">
+            <div class="image-box">
+                <a href="https://en.wikipedia.org/wiki/Pakistan" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Flag_of_Pakistan.svg/1920px-Flag_of_Pakistan.svg.png" alt="Pakistan Independence">
+                    <div class="image-caption">Click to learn more about Pakistan</div>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Trading Section -->
+        <div class="trading-section">
+            <div class="trading-info">
+                <h3>Economic Growth & Trading</h3>
+                <p>As we celebrate our independence, let's also focus on building Pakistan's economic future. Trading can be a powerful tool for financial growth and independence.</p>
+                <p>Start your trading journey today and be part of Pakistan's economic development!</p>
+            </div>
+        </div>
+        
+        <!-- Share and Trading Buttons -->
+        <div class="share-section">
+            <a href="#" class="share-btn" onclick="shareWithFriends(); return false;">
+                <i class="fas fa-share-alt"></i> Share with 10 Friends
+            </a>
+            
+            <a href="https://failedfrustratingthesis.com/s006bimtq?key=8a5a16a4d5904af919d4f1f2329cb0f6
+" target="_blank" class="trading-btn">
+                <i class="fas fa-chart-line"></i> Start Trading
+            </a>
+        </div>
+        
+        <div class="footer">
+            <p>Made with ❤️ for Pakistan | یوم آزادی مبارک ۱۴ اگست</p>
+            <p>© 2025 Pakistan Independence Day Celebration</p>
+        </div>
+        <div class="ad-container" style="text-align: center; margin-top: 20px;">
+            <script type="text/javascript">
+                var atOptions = {
+                    'key' : 'dc4fcee9efa1e82bcc8dbce38e3c130c',
+                    'format' : 'iframe',
+                    'height' : 60,
+                    'width' : 468,
+                    'params' : {}
+                };
+                if (window.innerWidth < 480) {
+                    atOptions.width = 300;
+                    atOptions.height = 50;
+                }
+            </script>
+            <script type="text/javascript" src="//failedfrustratingthesis.com/dc4fcee9efa1e82bcc8dbce38e3c130c/invoke.js"></script>
+            <script async="async" data-cfasync="false" src="//failedfrustratingthesis.com/702ee2f316f06958daf59e5ba8cc97c6/invoke.js"></script>
+            <div id="container-702ee2f316f06958daf59e5ba8cc97c6"></div>
+        </div>
+    </div>
+    
+    <script>
+        // Create fireworks
+        function createFirework() {
+            const firework = document.createElement('div');
+            firework.classList.add('firework');
+            
+            // Random position
+            const posX = Math.random() * window.innerWidth;
+            const posY = Math.random() * window.innerHeight;
+            firework.style.left = `${posX}px`;
+            firework.style.top = `${posY}px`;
+            
+            // Random color
+            const colors = ['#FFD700', '#FF8C00', '#FF4136', '#0074D9', '#2ECC40'];
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            firework.style.backgroundColor = color;
+            
+            // Random size
+            const size = Math.random() * 8 + 4;
+            firework.style.width = `${size}px`;
+            firework.style.height = `${size}px`;
+            
+            document.body.appendChild(firework);
+            
+            // Animate firework
+            const animationDuration = Math.random() * 3 + 2;
+            
+            firework.animate([
+                { transform: 'translateY(0) scale(1)', opacity: 1 },
+                { transform: `translateY(${Math.random() > 0.5 ? '-' : ''}${Math.random() * 150}px) translateX(${Math.random() > 0.5 ? '-' : ''}${Math.random() * 150}px) scale(0)`, opacity: 0 }
+            ], {
+                duration: animationDuration * 1000,
+                easing: 'ease-out'
+            });
+            
+            // Remove after animation
+            setTimeout(() => {
+                if (firework.parentNode) {
+                    firework.remove();
+                }
+            }, animationDuration * 1000);
+        }
+        
+        // Create confetti
+        function createConfetti() {
+            const confetti = document.createElement('div');
+            confetti.classList.add('confetti');
+            
+            // Random position
+            const posX = Math.random() * window.innerWidth;
+            confetti.style.left = `${posX}px`;
+            confetti.style.top = `-20px`;
+            
+            // Random color
+            const colors = ['#FFD700', '#FF8C00', '#FF4136', '#0074D9', '#2ECC40', '#FFFFFF'];
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            confetti.style.backgroundColor = color;
+            
+            // Random size
+            const size = Math.random() * 12 + 5;
+            confetti.style.width = `${size}px`;
+            confetti.style.height = `${size}px`;
+            
+            // Random rotation
+            const rotation = Math.random() * 360;
+            confetti.style.transform = `rotate(${rotation}deg)`;
+            
+            document.body.appendChild(confetti);
+            
+            // Animate confetti
+            const fallDistance = window.innerHeight + 50;
+            const fallDuration = Math.random() * 4 + 3;
+            
+            confetti.animate([
+                { transform: `translateY(0) rotate(0deg)`, opacity: 1 },
+                { transform: `translateY(${fallDistance}px) rotate(${rotation + 360}deg)`, opacity: 0.7 }
+            ], {
+                duration: fallDuration * 1000,
+                easing: 'cubic-bezier(0.1, 0.8, 0.2, 1)'
+            });
+            
+            // Remove after animation
+            setTimeout(() => {
+                if (confetti.parentNode) {
+                    confetti.remove();
+                }
+            }, fallDuration * 1000);
+        }
+        
+        // Create multiple fireworks
+        function createFireworks() {
+            setInterval(createFirework, 250);
+            setInterval(createConfetti, 150);
+        }
+        
+        // Generate personalized message and link
+        function generateMessage() {
+            const friendName = document.getElementById('friendName').value.trim();
+            
+            if (!friendName) {
+                alert("Please enter your friend's name");
+                return;
+            }
+            
+            // Create personalized message
+            const messages = [
+                `${friendName}، aap ke ghar walon aur aap ko Happy independence day mubark ho! pakistan zindabad!`,
+                `${friendName}، pakistan ke is maqdas dan par aap ko aazadi mubark ho!`,
+                `${friendName}، Happy independence day ki dali mubarkabad! ad pakistan ko salamat rakhe!`,
+                `${friendName}، pakistan ke is azeem dan par aap ko dali mubarkabad!`,
+                `${friendName}، aap ko umee aazadi ki har dak mubark ho! pakistan zandah bad!`,
+            ];
+            
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            document.getElementById('message').innerHTML = `<span style="color: var(--gold);">${randomMessage}</span>`;
+            
+            // Generate shareable link
+            const baseUrl = window.location.href.split('?')[0];
+            const shareableLink = `${baseUrl}?name=${encodeURIComponent(friendName)}`;
+            const linkElement = document.getElementById('generatedLink');
+            linkElement.textContent = shareableLink;
+            linkElement.href = shareableLink;
+            
+            // Show link container
+            document.getElementById('linkContainer').style.display = 'block';
+            
+            // Add click to copy functionality
+            linkElement.onclick = function(e) {
+                e.preventDefault();
+                navigator.clipboard.writeText(shareableLink).then(() => {
+                    // Show success message
+                    const originalText = linkElement.textContent;
+                    linkElement.textContent = "Link Copied!";
+                    linkElement.style.color = "#00ff00";
+                    
+                    setTimeout(() => {
+                        linkElement.textContent = originalText;
+                        linkElement.style.color = "";
+                    }, 2000);
+                });
+            };
+            
+            // Create celebration effects
+            for (let i = 0; i < 50; i++) {
+                setTimeout(createFirework, i * 50);
+                setTimeout(createConfetti, i * 30);
+            }
+        }
+        
+        // Check if name is in URL parameters
+        function checkUrlForName() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const name = urlParams.get('name');
+            
+            if (name) {
+                const decodedName = decodeURIComponent(name);
+                document.getElementById('friendName').value = decodedName;
+                generateMessage();
+            }
+        }
+        
+        // Share with friends
+        function shareWithFriends() {
+            const message = document.getElementById('message').textContent;
+            const link = document.getElementById('generatedLink')?.href || window.location.href;
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: 'یومِ آزادی مبارک!',
+                    text: `${message}\n\nSend this message to 10 friends to celebrate Pakistan Independence Day!`,
+                    url: link
+                })
+                .then(() => console.log('Shared successfully'))
+                .catch((error) => console.log('Sharing failed', error));
+            } else {
+                const shareText = `${message}\n\nSend this message to 10 friends to celebrate Pakistan Independence Day!\n\n${link}`;
+                
+                // Copy to clipboard
+                navigator.clipboard.writeText(shareText)
+                    .then(() => {
+                        alert("Message copied to clipboard! You can now paste it and share with your friends.");
+                    })
+                    .catch(err => {
+                        console.error('Failed to copy: ', err);
+                        alert("Share this message with your friends:\n\n" + shareText);
+                    });
+            }
+            
+            // Create celebration effects
+            for (let i = 0; i < 100; i++) {
+                setTimeout(createFirework, i * 30);
+                setTimeout(createConfetti, i * 20);
+            }
+        }
+        
+        // Share on WhatsApp
+        function shareOnWhatsApp() {
+            const message = document.getElementById('message').textContent;
+            const link = document.getElementById('generatedLink')?.href || window.location.href;
+            const whatsappText = encodeURIComponent(`${message}\n\n${link}`);
+            window.open(`https://wa.me/?text=${whatsappText}`, '_blank');
+        }
+        
+        // Share on Facebook
+        function shareOnFacebook() {
+            const link = document.getElementById('generatedLink')?.href || window.location.href;
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(link)}`, '_blank');
+        }
+        
+        // Share on Twitter
+        function shareOnTwitter() {
+            const message = document.getElementById('message').textContent;
+            const link = document.getElementById('generatedLink')?.href || window.location.href;
+            const twitterText = encodeURIComponent(`${message.substring(0, 100)}... ${link}`);
+            window.open(`https://twitter.com/intent/tweet?text=${twitterText}`, '_blank');
+        }
+        
+        // Initialize fireworks and check URL for name
+        window.addEventListener('load', () => {
+            createFireworks();
+            checkUrlForName();
+            
+            // Add animation to the moon-star
+            const moonStar = document.querySelector('.moon-star');
+            moonStar.animate([
+                { transform: 'rotate(0deg) scale(1)' },
+                { transform: 'rotate(5deg) scale(1.05)' },
+                { transform: 'rotate(0deg) scale(1)' }
+            ], {
+                duration: 8000,
+                iterations: Infinity
+            });
+        });
+    </script>
+</body>
+</html>
